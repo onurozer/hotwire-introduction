@@ -1,0 +1,10 @@
+<div class="flex w-1/2 gap-x-2">
+  <%= form_with model: task do |form| %>
+    <%= form.check_box :checked, class: "form-checkbox h-5 w-5 text-gray-500", onchange: 'this.form.submit()' %>
+  <% end %>
+  <% if task.checked? %>
+    <span class="text-gray-500 line-through"><%= task.title %></span>
+  <% else %>
+    <%= task.title %>
+  <% end %>
+</div>
