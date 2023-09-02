@@ -4,8 +4,16 @@
     <span class="flex items-center justify-center w-6 h-6 p-3 text-white bg-red-500 rounded-full"><%= tasks_count %></span>
   </div>
 </div>
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= render task %></li>
+<div class="mb-5">
+  <ul>
+    <% @tasks.each do |task| %>
+      <li><%= render task %></li>
+    <% end %>
+  </ul>
+</div>
+<div>
+  <%= form_with model: @task do |form| %>
+    <%= form.text_field :title, class: "form-input", autofocus: true, required: true %>
+    <%= form.submit "Add", class: "bg-gray-900 text-white form-input" %>
   <% end %>
-</ul>
+</div>
