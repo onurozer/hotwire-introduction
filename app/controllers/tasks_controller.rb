@@ -15,7 +15,8 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to tasks_url, notice: "Task was successfully updated."
+      render @task
+      # format.html { redirect_to tasks_url, notice: "Task was successfully updated." }
     else
       render :index, status: :unprocessable_entity
     end
