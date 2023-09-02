@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .turbo-progress-bar {
+    @apply fixed top-0 left-0 w-full h-1 bg-indigo-500;
+    z-index: 9999;
+  }
+}
