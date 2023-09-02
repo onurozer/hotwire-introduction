@@ -1,11 +1,10 @@
+<%= turbo_stream_from "tasks_activity" %>
 <div class="flex gap-x-2">
   <h1 class="mb-5 text-4xl font-bold tracking-tight">Tasks</h1>
   <div id ="tasks_count" class="flex items-center justify-center w-6 h-6 p-3 text-white bg-red-500 rounded-full"><%= tasks_count %></div>
 </div>
-<div class="mb-5">
-  <% @tasks.each do |task| %>
-    <%= render task %>
-  <% end %>
+<div id="tasks" class="mb-5">
+  <%= render collection: @tasks, partial: "tasks/task" %>
 </div>
 <div>
   <%= form_with model: @task do |form| %>
