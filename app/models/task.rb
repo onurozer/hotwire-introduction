@@ -10,4 +10,7 @@ class Task < ApplicationRecord
   after_destroy_commit -> {
     broadcast_remove_to "tasks_activity"
   }
+  after_commit -> {
+    broadcast_update_to "tasks_activity", target: "tasks_count", partial: "tasks/count"
+  }, on: [:create, :destroy]
 end

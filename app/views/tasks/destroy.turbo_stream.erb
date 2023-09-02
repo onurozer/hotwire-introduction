@@ -1,4 +1,2 @@
-<%= turbo_stream.update "tasks_count" do %>
-  <%= tasks_count %>
-<% end %>
+<%= turbo_stream.update "tasks_count", partial: "tasks/count" %>
 <%= turbo_stream.remove @task %>
