@@ -5,11 +5,9 @@
   </div>
 </div>
 <div class="mb-5">
-  <ul>
-    <% @tasks.each do |task| %>
-      <li><%= render task %></li>
-    <% end %>
-  </ul>
+  <% @tasks.each do |task| %>
+    <%= render task %>
+  <% end %>
 </div>
 <div>
   <%= form_with model: @task do |form| %>
